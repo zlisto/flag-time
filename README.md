@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+# Flag Time
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Flag Time is an interactive React app that lets you explore the current time in different countries around the world. Select a country from the dropdown to see its flag and local time. When you select Thailand, a music track ("Diplo - Jump Beat.mp3") will play in a loop for a fun, immersive experience!
 
-## Available Scripts
+## Features
+- View the current time in various countries
+- See a graphical flag for each country
+- Special: When Thailand is selected, a song plays in the background
 
-In the project directory, you can run:
+## How to Run This App
 
-### `npm start`
+### 1. Clone the Repository
+```
+git clone <your-repo-url>
+cd <your-repo-folder>
+```
+Replace `<your-repo-url>` with the GitHub link for this project, and `<your-repo-folder>` with the folder name created by the clone.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 2. Install Dependencies
+```
+npm install
+```
+This will install all required packages.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 3. Start the App
+```
+npm start
+```
+This will launch the app in development mode. By default, it opens at [http://localhost:3000](http://localhost:3000).
 
-### `npm test`
+### 4. Use the App
+- Select a country from the dropdown menu.
+- The flag and local time will update.
+- If you select Thailand, the music will play in a loop!
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+**Note:**
+- Make sure the file `public/Diplo - Jump Beat.mp3` is present. This is required for the Thailand music feature.
+- You need [Node.js](https://nodejs.org/) installed on your computer.
+- If you want to build a production version, run `npm run build`.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Enjoy exploring world flags and times!
