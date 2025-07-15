@@ -20,8 +20,10 @@ const countries = [
 
 function App() {
   const [selectedCountry, setSelectedCountry] = useState(countries[0]);
+  const [webhookText, setWebhookText] = useState('');
   const audioRef = useRef(null);
 
+  // Play/pause music for Thailand
   useEffect(() => {
     if (selectedCountry.code === 'TH') {
       audioRef.current && audioRef.current.play();
@@ -31,6 +33,29 @@ function App() {
         audioRef.current.currentTime = 0;
       }
     }
+  }, [selectedCountry]);
+
+  // Call webhook when country changes
+  useEffect(() => {
+    const fetchWebhookText = async () => {
+      setWebhookText(''); // Clear previous text while loading
+      try {
+        // TODO: Replace with your actual webhook URL
+        const webhookUrl = 'https://zlisto.app.n8n.cloud/webhook-test/2a8bd082-37fc-42ec-b8f8-25b6baa4e8e9';//test
+        //const webhookUrl = 'https://zlisto.app.n8n.cloud/webhook/2a8bd082-37fc-42ec-b8f8-25b6baa4e8e9';  //production
+        const response = await fetch(webhookUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ country: selectedCountry.name })
+        });
+        if (!response.ok) throw new Error('Network response was not ok');
+        const data = await response.json();
+        setWebhookText(data.text || '');
+      } catch (error) {
+        setWebhookText(''); // Optionally show an error message
+      }
+    };
+    fetchWebhookText();
   }, [selectedCountry]);
 
   return (
@@ -69,6 +94,24 @@ function App() {
         <div style={{ marginTop: '2rem' }}>
           <Clock timezone={selectedCountry.timezone} />
         </div>
+        {/* Webhook text display */}
+        {webhookText && (
+          <div style={{
+            marginTop: '1.5rem',
+            fontFamily: 'cursive, sans-serif',
+            fontSize: '1.4rem',
+            color: '#ffb6e6',
+            background: 'rgba(30, 0, 40, 0.7)',
+            padding: '1rem 2rem',
+            borderRadius: '1rem',
+            maxWidth: '80%',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            boxShadow: '0 2px 12px 0 rgba(255,182,230,0.15)'
+          }}>
+            {webhookText}
+          </div>
+        )}
       </header>
     </div>
   );
