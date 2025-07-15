@@ -7,6 +7,9 @@ import GBFlag from './components/GBFlag';
 import JPFlag from './components/JPFlag';
 import BRFlag from './components/BRFlag';
 import INFlag from './components/INFlag';
+import BangladeshFlag from './components/BangladeshFlag';
+import KoreaFlag from './components/KoreaFlag';
+import FranceFlag from './components/FranceFlag';
 
 const countries = [
   { name: 'United States', code: 'US', flag: '🇺🇸', timezone: 'America/New_York' },
@@ -15,6 +18,9 @@ const countries = [
   { name: 'Brazil', code: 'BR', flag: '🇧🇷', timezone: 'America/Sao_Paulo' },
   { name: 'India', code: 'IN', flag: '🇮🇳', timezone: 'Asia/Kolkata' },
   { name: 'Thailand', code: 'TH', flag: '🇹🇭', timezone: 'Asia/Bangkok' },
+  { name: 'Bangladesh', code: 'BD', flag: '🇧🇩', timezone: 'Asia/Dhaka' },
+  { name: 'Korea', code: 'KR', flag: '🇰🇷', timezone: 'Asia/Seoul' },
+  { name: 'France', code: 'FR', flag: '🇫🇷', timezone: 'Europe/Paris' },
   // Add more countries as needed
 ];
 
@@ -117,6 +123,9 @@ function App() {
           {selectedCountry.code === 'JP' && <JPFlag width={160} height={96} />}
           {selectedCountry.code === 'BR' && <BRFlag width={160} height={96} />}
           {selectedCountry.code === 'IN' && <INFlag width={160} height={96} />}
+          {selectedCountry.code === 'BD' && <BangladeshFlag width={160} height={96} />}
+          {selectedCountry.code === 'KR' && <KoreaFlag width={160} height={96} />}
+          {selectedCountry.code === 'FR' && <FranceFlag width={160} height={96} />}
         </div>
         {/* Mute button for Thailand music */}
         {selectedCountry.code === 'TH' && (
